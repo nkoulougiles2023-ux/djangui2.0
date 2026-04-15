@@ -106,13 +106,8 @@ class Guarantee(models.Model):
             models.Index(fields=["guarantor", "status"]),
             models.Index(fields=["loan", "status"]),
         ]
-        constraints = [
-            models.CheckConstraint(
-                check=~models.Q(guarantor=models.F("loan__borrower")),
-                name="guarantor_not_borrower",
-                violation_error_message="Un avaliste ne peut pas garantir son propre prêt",
-            ),
-        ]
+        # Rule "guarantor != loan.borrower" is enforced in
+        # GuaranteeService.create_guarantee; a CheckConstraint cannot traverse FKs.
 
 
 class LoanRepayment(models.Model):

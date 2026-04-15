@@ -14,3 +14,6 @@ celerybeat-schedule
 celerybeat.pid
 
 .vercel
+.env*.local
+.env.production
+.env.development
