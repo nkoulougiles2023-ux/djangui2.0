@@ -12,3 +12,5 @@ staticfiles/
 .vscode/
 celerybeat-schedule
 celerybeat.pid
+
+.vercel

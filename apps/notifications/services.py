@@ -46,3 +46,12 @@ class NotificationService:
         if not fcm_key:
             return
         log.info("FCM would dispatch to=%s type=%s", token[:8], type_)
+
+
+def notify(user, type_: str, title: str, message: str) -> Notification:
+    """Module-level alias — used across apps for simple single-user notifications."""
+    return NotificationService.notify(user, type_, title, message)
+
+
+def bulk_notify(users, type_: str, title: str, message: str) -> int:
+    return NotificationService.bulk_notify(users, type_, title, message)

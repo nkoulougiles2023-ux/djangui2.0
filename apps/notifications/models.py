@@ -8,6 +8,8 @@ class Notification(models.Model):
     TYPES = (
         ("loan_reminder", "loan_reminder"),
         ("loan_approved", "loan_approved"),
+        ("loan_cancelled", "loan_cancelled"),
+        ("loan_repaid", "loan_repaid"),
         ("loan_defaulted", "loan_defaulted"),
         ("guarantee_request", "guarantee_request"),
         ("guarantee_seized", "guarantee_seized"),
